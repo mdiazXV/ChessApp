@@ -1,8 +1,10 @@
 import './App.css';
+import Header from './components/header.jsx';
 
 function App() {
   return (
     <div data-testid="main" className="App">
+      <Header data-testid="headerComp" title='Chess Game'/>
     </div>
   );
 }

@@ -11,4 +11,12 @@ describe('App Main testing', () => {
     expect(mainDiv).toBeInTheDocument();
   });
 
+  it('should have a header inside of the main div', () => {
+    render(<App />);
+
+    const headerComponent = screen.getByTestId('pageTitle');
+
+    expect(headerComponent).not.toBeNull();
+  });
+
 });

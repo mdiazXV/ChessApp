@@ -2,6 +2,8 @@
 
 Make sure you cd into the app folder before running.
 
+## Testing Cheatsheet: https://testing-library.com/docs/react-testing-library/cheatsheet/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
