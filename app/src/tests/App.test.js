@@ -1,20 +1,25 @@
-import { render, screen } from '@testing-library/react';
+// import { render, screen } from '@testing-library/react';
+import { mockElement, createElement, getElement, getAllElements } from './testHelpers';
 import App from '../App';
+
+jest.mock('../components/header', () => mockElement('Header'));
 
 describe('App Main testing', () => {
 
   it('should have a main div in the application', () => {
-    render(<App />);
+    const element = createElement(<App />);
 
-    const mainDiv = screen.getByTestId('main');
+    const mainDiv = getElement(element, 'main');
     
-    expect(mainDiv).toBeInTheDocument();
+    expect(mainDiv).not.toBeNull();
   });
 
   it('should have a header inside of the main div', () => {
-    render(<App />);
+    const element = createElement(<App />);
 
-    const headerComponent = screen.getByTestId('pageTitle');
+    console.log(element.outerHTML);
+
+    const headerComponent = getElement(element, 'Header');
 
     expect(headerComponent).not.toBeNull();
   });
