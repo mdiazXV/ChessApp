@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from '../App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App Main testing', () => {
+
+  it('should have a main div in the application', () => {
+    render(<App />);
+
+    const mainDiv = screen.getByTestId('main');
+    
+    expect(mainDiv).toBeInTheDocument();
+  });
+
 });
