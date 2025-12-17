@@ -37,7 +37,11 @@ export function getElementProps(element) {
     const props = element.querySelector('div[data-testid="mocked-props"]');
 
     if (props != null) {
-        return JSON.parse(props.textContent);
+        let jObj = JSON.parse(props.textContent);
+        if (jObj.children !== undefined) {
+            jObj.textContent = jObj.children;
+        } 
+        return jObj;
     }
 
     return {};
