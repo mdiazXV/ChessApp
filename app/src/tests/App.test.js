@@ -1,5 +1,4 @@
-// import { render, screen } from '@testing-library/react';
-import { mockElement, createElement, getElement, getAllElements } from './testHelpers';
+import { mockElement, createElement, getElement, getElementProps } from './testHelpers';
 import App from '../App';
 
 jest.mock('../components/header', () => mockElement('Header'));
@@ -17,11 +16,13 @@ describe('App Main testing', () => {
   it('should have a header inside of the main div', () => {
     const element = createElement(<App />);
 
-    console.log(element.outerHTML);
-
     const headerComponent = getElement(element, 'Header');
 
     expect(headerComponent).not.toBeNull();
+
+    const headerProps = getElementProps(headerComponent);
+
+    expect(headerProps.title).toEqual('Chess Game');
   });
 
 });
