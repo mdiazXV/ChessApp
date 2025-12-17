@@ -1,9 +1,9 @@
 function Square ({isBlack}) {
     console.log("This is what was received ", {isBlack});
-
+    const size = "75px";
     const squareStyle = {
-        width: '100px',
-        height: '100px',
+        width: size,
+        height: size,
         backgroundColor: isBlack ? "#b015dbff" : "#eeeed2",
     }
 

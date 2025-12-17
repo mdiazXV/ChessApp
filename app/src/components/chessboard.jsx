@@ -4,7 +4,7 @@ function Chessboard () {
    
     const chessboardStyle = {
         display: 'grid',
-        gridTemplateColumns: 'repeat(8, 100px',
+        gridTemplateColumns: 'repeat(8, 75px)',
         border: '2px solid black',
         wiidth: 'fit-content',
     };
