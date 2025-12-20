@@ -1,15 +1,18 @@
-function Square ({isBlack}) {
-    console.log("This is what was received ", {isBlack});
+function Square ({isBlack, coordinates}) {
     const size = "75px";
     const squareStyle = {
         width: size,
         height: size,
         backgroundColor: isBlack ? "#b015dbff" : "#eeeed2",
     }
+    
+    function getCoordinates ()  {
+        console.log(coordinates);
+    }
 
     return (
-            <div style={squareStyle}> 
-            </div>
+            <button style={squareStyle} onClick={getCoordinates}>
+            </button>
     );
 
 }
