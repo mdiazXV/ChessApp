@@ -1,6 +1,6 @@
 import '../styles/square.css';
 
-function Square ({isBlack}) {
+function Square ({isBlack, coordinates}) {
     
     function classNames() {
         const colorClass = isBlack ? "black" : "white";
@@ -8,10 +8,13 @@ function Square ({isBlack}) {
         console.log(classNames);
         return classes;
     }
+    
+    function getCoordinates ()  {
+        console.log(coordinates);
+    }
 
     return (
-        <div className={classNames()}> 
-        </div>
+        <button className={classNames()} onClick={getCoordinates} />
     );
 
 }
