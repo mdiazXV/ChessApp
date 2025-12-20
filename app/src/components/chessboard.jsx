@@ -1,13 +1,7 @@
 import Square from "./square";
+import '../styles/chessboard.css';
 
 function Chessboard () {
-   
-    const chessboardStyle = {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(8, 75px)',
-        border: '2px solid black',
-        wiidth: 'fit-content',
-    };
 
     const squares = [];
 
@@ -21,7 +15,7 @@ function Chessboard () {
     }
    
     return (
-        <div style={chessboardStyle}> {squares} </div>
+        <div className="board"> {squares} </div>
     );
 }
 

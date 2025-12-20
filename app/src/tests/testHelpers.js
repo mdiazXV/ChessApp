@@ -19,7 +19,6 @@ export function createElement(element) {
     return render(element).container;
 }
 
-
 export function getElement(parent, element) {
     const foundElement = parent.querySelector(element); 
     const testId = 'div[data-testid="' + element + '"]';

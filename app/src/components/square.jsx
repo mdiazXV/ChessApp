@@ -1,18 +1,19 @@
+import '../styles/square.css';
+
 function Square ({isBlack}) {
-    console.log("This is what was received ", {isBlack});
-    const size = "75px";
-    const squareStyle = {
-        width: size,
-        height: size,
-        backgroundColor: isBlack ? "#b015dbff" : "#eeeed2",
+    
+    function classNames() {
+        const colorClass = isBlack ? "black" : "white";
+        const classes = "square " + colorClass;
+        console.log(classNames);
+        return classes;
     }
 
     return (
-            <div style={squareStyle}> 
-            </div>
+        <div className={classNames()}> 
+        </div>
     );
 
 }
-
 
 export default Square;
