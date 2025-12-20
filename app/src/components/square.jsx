@@ -1,9 +1,12 @@
+import '../styles/square.css';
+
 function Square ({isBlack, coordinates}) {
-    const size = "75px";
-    const squareStyle = {
-        width: size,
-        height: size,
-        backgroundColor: isBlack ? "#b015dbff" : "#eeeed2",
+    
+    function classNames() {
+        const colorClass = isBlack ? "black" : "white";
+        const classes = "square " + colorClass;
+        console.log(classNames);
+        return classes;
     }
     
     function getCoordinates ()  {
@@ -11,11 +14,9 @@ function Square ({isBlack, coordinates}) {
     }
 
     return (
-            <button style={squareStyle} onClick={getCoordinates}>
-            </button>
+        <button className={classNames()} onClick={getCoordinates} />
     );
 
 }
-
 
 export default Square;

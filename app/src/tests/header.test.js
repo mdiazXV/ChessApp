@@ -1,4 +1,4 @@
-import { mockElement, createElement, getElement, getAllElements } from './testHelpers';
+import { createElement, getElement } from './testHelpers';
 import Header from '../components/header.jsx';
 
 describe('Header Component', () => {
