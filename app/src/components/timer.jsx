@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import '../styles/timer.css';
 
 function Timer() {
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(3);
+  const [minutes, setMinutes] = useState(20);
+  const [seconds, setSeconds] = useState(0);
   const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
