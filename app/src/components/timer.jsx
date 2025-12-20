@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 
 function Timer() {
-  const [minutes, setMinutes] = useState(2);
-  const [seconds, setSeconds] = useState(5);
+  const [minutes, setMinutes] = useState(20);
+  const [seconds, setSeconds] = useState(59);
+  const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
-    if (minutes === 0 && seconds === 0) return;
+    if (minutes === 0 && seconds === 0){
+        setGameOver(true);
+        return;
+    }
 
     const interval = setInterval(() => {
       if (seconds === 0) {
@@ -18,6 +22,21 @@ function Timer() {
 
     return () => clearInterval(interval);
      }, [minutes, seconds]);
+
+     if(gameOver == true){
+       return (
+        <div>
+       <h2>Game Over</h2>
+        <button onClick={handleClick}>Reset</button></div>
+    );
+       
+     }
+
+     function handleClick () {
+        setGameOver(false);
+        setMinutes(20);
+        setSeconds(59);
+     }
 
   return (
     <div>
