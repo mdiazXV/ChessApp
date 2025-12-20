@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
+import '../styles/timer.css';
 
 function Timer() {
-  const [minutes, setMinutes] = useState(20);
-  const [seconds, setSeconds] = useState(59);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(3);
   const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     if (minutes === 0 && seconds === 0){
-        setGameOver(true);
-        return;
+      setGameOver(true);
+      return;
     }
 
     const interval = setInterval(() => {
@@ -21,26 +22,26 @@ function Timer() {
     }, 1000);
 
     return () => clearInterval(interval);
-     }, [minutes, seconds]);
+  }, [minutes, seconds]);
 
-     if(gameOver == true){
-       return (
-        <div>
-       <h2>Game Over</h2>
-        <button onClick={handleClick}>Reset</button></div>
-    );
-       
-     }
+  function handleClick () {
+    setGameOver(false);
+    setMinutes(20);
+    setSeconds(59);
+  }
 
-     function handleClick () {
-        setGameOver(false);
-        setMinutes(20);
-        setSeconds(59);
-     }
+  if(gameOver){
+    return (
+      <div className="gameOverContainer">
+        <h2>Game Over</h2>
+        <button className="resetButton" onClick={handleClick}>Reset</button>
+      </div>
+    ); 
+  }
 
   return (
     <div>
-      <p>
+      <p className="time">
         Timer: {minutes}:{seconds.toString().padStart(2, "0")}
       </p>
     </div>

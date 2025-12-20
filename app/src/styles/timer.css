@@ -1,0 +1,35 @@
+.time {
+
+    font-size: large;
+    background-color: white;
+    color: purple;
+    padding: 5px;
+    border: 2px solid purple;
+    border-radius: 5px;
+
+}
+
+.gameOverContainer {
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    .resetButton {
+
+        font-size: large;
+        background-color: white;
+        padding: 5px;
+        border: 2px solid darkgray;
+        border-radius: 5px;
+
+        &:hover {
+            cursor: pointer;
+            border-color: purple;
+            color: purple;
+            background-color: lightgoldenrodyellow;
+        }
+
+    }
+
+}
